@@ -2,11 +2,26 @@ import 'package:fheroes/views/HeroDetailBody.dart';
 import 'package:flutter/material.dart';
 import 'package:fheroes/views/HeroDetailHeader.dart';
 
-class DetailPage extends StatelessWidget {
+class DetailPage extends StatefulWidget {
   var _hero;
-  var _url;
 
   DetailPage(this._hero);
+
+  @override
+  State<StatefulWidget> createState() {
+    return DetailState(_hero);
+  }
+}
+
+class DetailState extends State<DetailPage> {
+  var _url;
+  var _hero;
+  DetailState(this._hero);
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
