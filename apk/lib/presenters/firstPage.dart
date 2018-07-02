@@ -15,6 +15,7 @@ class First extends StatefulWidget {
 class FirsState extends State<First> with TickerProviderStateMixin {
   bool _isLoading = true;
   var heroes;
+  var _skills;
   final url2 = 'https://raw.githubusercontent.com/castsaku/fehcompanion/master/stats.json';
 
   Future<String> _fetchData() async {
@@ -23,9 +24,11 @@ class FirsState extends State<First> with TickerProviderStateMixin {
     if (response.statusCode == 200) {
       final map = json.decode(response.body);
       final heroesJson = map['heroes'];
+      final skillsJson =map["skills"];
       setState(() {
         _isLoading = false;
         this.heroes = heroesJson;
+        this._skills=skillsJson;
       });
       return "OK";
     } else
@@ -131,7 +134,7 @@ class FirsState extends State<First> with TickerProviderStateMixin {
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => DetailPage(hero))),
+                                    builder: (context) => DetailPage(hero,_skills))),
                           );
                         },
                       )),

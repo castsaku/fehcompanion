@@ -4,6 +4,8 @@ ADDED from C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\android\app\sr
 INJECTED from C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\android\app\src\main\AndroidManifest.xml:1:1-39:12
 INJECTED from C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\android\app\src\main\AndroidManifest.xml:1:1-39:12
 INJECTED from C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\android\app\src\main\AndroidManifest.xml:1:1-39:12
+MERGED from [:sqflite] C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\build\sqflite\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:path_provider] C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\build\path_provider\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-7:12
 INJECTED from C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\android\app\src\main\AndroidManifest.xml:1:1-39:12
 INJECTED from C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\android\app\src\main\AndroidManifest.xml:1:1-39:12
 INJECTED from C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\android\app\src\main\AndroidManifest.xml:1:1-39:12
@@ -67,6 +69,10 @@ uses-sdk
 INJECTED from C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\android\app\src\main\AndroidManifest.xml
+MERGED from [:sqflite] C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\build\sqflite\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:sqflite] C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\build\sqflite\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:path_provider] C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\build\path_provider\intermediates\manifests\full\debug\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\build\path_provider\intermediates\manifests\full\debug\AndroidManifest.xml:5:5-44
 INJECTED from C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Etito\Documents\fehcompanion\fehcompanion\apk\android\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
