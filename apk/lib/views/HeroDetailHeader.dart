@@ -1,10 +1,25 @@
 import 'package:flutter/material.dart';
 
-class HeroDetailHeader extends StatelessWidget {
+class HeroDetailHeader extends StatefulWidget {
+  var _hero;
+
+  HeroDetailHeader(this._hero);
+  State createState() => new HeroState(_hero);
+}
+
+class HeroState extends State<HeroDetailHeader>{
+  static const BACKGROUND_IMAGE = "assets/back.jpg";
   var _hero;
   var _url;
-  static const BACKGROUND_IMAGE = "assets/back.jpg";
-  HeroDetailHeader(this._hero);
+  HeroState(this._hero);
+  List<String> _values=new List<String>();
+  String _value;
+  @override
+  void initState() {
+    _values=returnStarsArray(_hero["rarities"]);
+    _value=_values.first;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +39,7 @@ class HeroDetailHeader extends StatelessWidget {
                   )),
               _buildAvatar(_url),
               _buildFollowerInfo(textTheme, _hero),
-              _buildTitle(_hero["rarities"])
+              _buildDropDown()
             ],
           ),
         ],
@@ -68,28 +83,20 @@ class HeroDetailHeader extends StatelessWidget {
     );
   }
 
-  Widget _buildTitle(String rarities) {
-
-    List<String> lstRarieties=rarities.split("-");
-    List<int> numRarities=[];
-    lstRarieties.forEach((num)=> numRarities.add(int.parse(num)));
-    List<String>arrStars=[];
-    numRarities.forEach((cant){
-      String raryStar="";
-      for(int i=0;i<cant;i++){
-        raryStar+=new String.fromCharCode(11088);
-      }
-      arrStars.add(raryStar);
-    });
+  Widget _buildDropDown({String rarities}) {
     return  DropdownButton<String>(
-            value: arrStars[0] ,
-            items: arrStars.map((String value) {
-              return new DropdownMenuItem<String>(
-                value: value,
-                child: new Text(value),
-              );
-            }).toList(),
-            onChanged: (_) {},
+      value: _value,
+      items: _values.map((String value) {
+        return new DropdownMenuItem<String>(
+          value: value,
+          child: new Text(value),
+        );
+      }).toList(),
+    onChanged: (String value) {
+      setState(() {
+        _value=value;
+      });
+    },
     );
   }
 
@@ -115,4 +122,22 @@ class HeroDetailHeader extends StatelessWidget {
         return color;
     }
   }
+}
+
+List<String> returnStarsArray(String rarities){
+  List<String> lstRarieties=rarities.split("-");
+  List<int> numRarities=[];
+  lstRarieties.forEach((num)=> numRarities.add(int.parse(num)));
+  List<String>arrStars=[];
+  numRarities.forEach((cant){
+    String raryStar="";
+    for(int i=0;i<cant;i++){
+      raryStar+=new String.fromCharCode(11088);
+    }
+    arrStars.add(raryStar);
+    print(raryStar);
+  });
+  
+  return arrStars;
+  
 }

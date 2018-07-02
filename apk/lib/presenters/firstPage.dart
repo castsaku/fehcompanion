@@ -15,7 +15,7 @@ class First extends StatefulWidget {
 class FirsState extends State<First> with TickerProviderStateMixin {
   bool _isLoading = true;
   var heroes;
-  final url2 = 'https://raw.githubusercontent.com/ajhyndman/fire-emblem-working-title/master/packages/fire-emblem-heroes-stats/stats.json';
+  final url2 = 'https://raw.githubusercontent.com/castsaku/fehcompanion/master/stats.json';
 
   Future<String> _fetchData() async {
     final response = await http
