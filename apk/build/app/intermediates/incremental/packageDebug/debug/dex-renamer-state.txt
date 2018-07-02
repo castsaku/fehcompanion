@@ -1,0 +1,4 @@
+#Sun Jul 01 19:26:40 CLT 2018
+base.0=C\:\\Users\\Etito\\Documents\\fehcompanion\\fehcompanion\\apk\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex
