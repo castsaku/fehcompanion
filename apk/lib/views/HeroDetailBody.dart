@@ -163,7 +163,7 @@ class HeroDetailState extends State<HeroDetailBody> {
       skillList.add(skill);
     }
 
-    var a=skillList.map((s){
+   /* var a=skillList.map((s){
       for(value in skill)
     });
 
@@ -171,7 +171,7 @@ class HeroDetailState extends State<HeroDetailBody> {
     for (var value in skills) {
       (value["name"])
       lstwdgt.add(SkillsItem(value));
-    }
+    }*/
 
     return lstwdgt;
   }

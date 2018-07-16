@@ -15,7 +15,7 @@ class DataBase{
     if(_db != null){
       return _db;
     }
-    _db await initDB();
+    //_db await initDB();
     return _db;
   }
   DataBase._internal();

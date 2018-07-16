@@ -1,31 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:fheroes/presenters/firstPage.dart' as first;
 import './secondPage.dart' as second;
+
 void main() => runApp(new MaterialApp(
+      theme: new ThemeData(fontFamily: "fheroes"),
+      home: MyTabs(),
+    ));
 
-  theme: new ThemeData(fontFamily: "fheroes"),
-  home: MyTabs(),
-));
-
-class MyTabs extends StatefulWidget{
+class MyTabs extends StatefulWidget {
   @override
-  MyTabsState createState()=> MyTabsState();
-
-
-
+  MyTabsState createState() => MyTabsState();
 }
 
-class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin{
-
+class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
+  var _isLoading=true;
 
   TabController controller;
   @override
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    controller= TabController(vsync: this,length: 2);
+    controller = TabController(vsync: this, length: 2);
   }
 
   @override
@@ -34,39 +30,40 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin{
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
 
-     /*appBar: AppBar(
-       title: Text('Pages'),
-       backgroundColor: Colors.deepOrange,
-     ),*/
+    return MaterialApp(
+      home: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            children: <Widget>[
+              Listview(
+                I
 
-     bottomNavigationBar: Material(
-       //color: Color(0xFF344955),
 
-       color: Color(0xF0000000),
-       child: TabBar(
-         controller: controller,
-         tabs: <Tab>[
-           Tab(icon: Icon(Icons.event_note),text :'News'),
-           Tab(icon: Icon(Icons.people),text: "Heroes"),
-
-         ],
-
-       ),
-     ),
-     body: TabBarView(
-       controller: controller,
-       children: <Widget>[
-
-         second.Second(),
-         first.First(),
-       ],
-     ) ,
-   );
+              )
+            ],
+          ),
+        ),
+        appBar: AppBar(
+          backgroundColor: Color(0xFF3F51B5),
+          title: const Text("Heroes"),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: (){
+                setState(() {
+                  _isLoading=false;
+                });
+              }
+            )
+          ],
+        ),
+        body: Center(
+          child: _isLoading?CircularProgressIndicator():second.Second(),
+        ),
+      ),
+    );
   }
-
 }
